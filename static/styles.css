@@ -1,0 +1,17 @@
+*{
+	background-color: #181818;
+	color:#F0EBEA;
+}
+
+.hero, .display {
+	text-align: center;
+}
+
+form {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	text-align: center;
+}

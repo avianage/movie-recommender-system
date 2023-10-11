@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    </head>
+
+    <body>
+        <div class="hero">
+            <h1>Movie Recommendor System</h1>
+            <p>From TMDB Dataset</p>
+        </div>
+        
+        <div class = "form">    
+            <form method="POST">
+                <select name = "movie">
+                    {% for movie in movies %}
+                    <option 
+                        {% if movie == selected_movie %}selected{% endif %}>
+                        {{ movie }}  
+                    </option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Click Me!</button>
+            </form>
+        </div>
+
+        <div class="display">
+            <h3>Since You Liked</h3>
+            <h2>{{selected_movie}}<h2>
+            <h3>You might Like<h4>
+        </div>
+
+        {% if recommendations %}
+        <ul>
+            {% for recommended_movie in recommendations %}
+            <li>{{ recommended_movie }}</li>
+            {% endfor%}
+        </ul>
+        {% endif%} 
+    </body>
+</html>
+
