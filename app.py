@@ -1,6 +1,7 @@
 import pickle
 import pandas as pd
 from flask import Flask, render_template, request
+import zipfile
 
 def recommend(movie):
     movie_index = movies[movies['title'] == movie].index[0]
@@ -14,10 +15,24 @@ def recommend(movie):
     
     return recommend_movies     
 
-movie_dict = pickle.load(open('pickle_files/movies.pkl','rb'))
-movies = pd.DataFrame(movie_dict)
+movie_dict = {}
+similarity = []
 
-similarity = pickle.load(open('pickle_files/similarity.pkl', 'rb'))
+with zipfile.ZipFile("pickle_files/pickle_files.zip")  as zf:
+    for filename in zf.namelist():
+        if filename == "movies.pkl":
+            movie_dict = pickle.load(open('pickle_files/movies.pkl','rb'))
+            
+
+        if filename == "similarity.pkl":
+            similarity = pickle.load(open('pickle_files/similarity.pkl', 'rb'))
+            
+movies = pd.DataFrame(movie_dict)
+        
+# movie_dict = pickle.load(open('pickle_files/movies.pkl','rb'))
+# movies = pd.DataFrame(movie_dict)
+
+# similarity = pickle.load(open('pickle_files/similarity.pkl', 'rb'))
 
 app = Flask(__name__)
 
