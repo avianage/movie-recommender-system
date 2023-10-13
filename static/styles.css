@@ -1,11 +1,19 @@
 *{
 	background-color: #181818;
 	color:#F0EBEA;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero, .display {
 	text-align: center;
 }
+
+.hero {
+	margin-top: 60px;
+
+}
+
+
 
 form {
 	text-align: center;
@@ -14,4 +22,5 @@ form {
 ul {
 	list-style-type: none;
 	text-align: center;
+	transform: translate(-15px);
 }
