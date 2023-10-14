@@ -15,7 +15,7 @@ movies = movies.merge(credit, on='title')
 
 movies = movies[['movie_id', 'title', 'overview', 'genres', 'keywords', 'cast','crew']]
 
-movies.dropna(inplace=True)
+movies.dropna(inplace=True) # remove duplicates
 
 # Following Data should be converted to a list:
 # [{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}, {"id": 14, "name": "Fantasy"}, 
