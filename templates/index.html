@@ -6,10 +6,8 @@
     <body>
         <div class="hero">
             <h1>Movie Recommendor System</h1>
-            <p>From TMDB Dataset</p>
-        </div>
-        
-        <div class = "form">    
+            <p><a href="https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata">From TMDB Dataset</a></p>
+            
             <form method="POST">
                 <select name = "movie">
                     {% for movie in movies %}
@@ -19,23 +17,26 @@
                     </option>
                     {% endfor %}
                 </select>
+                <br>
                 <button type="submit">Recommend Movies</button>
             </form>
         </div>
 
         <div class="display">
             <h3>Since You Liked</h3>
-            <h2>{{selected_movie}}<h2>
+            <h2><span>{{selected_movie}}</span><h2>
             <h3>You might Like<h4>
-        </div>
-
-        {% if recommendations %}
-        <ul>
-            {% for recommended_movie in recommendations %}
-            <li>{{ recommended_movie }}</li>
-            {% endfor%}
-        </ul>
+    
+            {% if recommendations %}
+            <div class="grid-container">
+                <div class="grid">
+                    {% for recommended_movie in recommendations %}
+                    <div class="grid-item">{{ recommended_movie }}</div>  
+                    {% endfor %}
+                </div>
+            </div>
         {% endif%} 
+        </div>
     </body>
 </html>
 
