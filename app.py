@@ -52,4 +52,4 @@ def index():
     return render_template('index.html', selected_movie = selected_movie, movies = movie, recommendations = recommended_movie)
     
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
