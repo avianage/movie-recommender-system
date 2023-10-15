@@ -24,14 +24,17 @@
 
         <div class="display">
             <h3>Since You Liked</h3>
-            <h2><span>{{selected_movie}}</span><h2>
+            <h2><span class="movie">{{selected_movie}}</span><h2>
             <h3>You might Like<h4>
     
             {% if recommendations %}
             <div class="grid-container">
                 <div class="grid">
-                    {% for recommended_movie in recommendations %}
-                    <div class="grid-item">{{ recommended_movie }}</div>  
+                    {% for recommended_movie, movie_poster in zip(recommendations, movie_poster) %}
+                    <div class="grid-item">
+                        <img src="{{movie_poster}}", alt="Movie Poster">
+                        <span class="recommend">{{ recommended_movie }}</span>
+                    </div>  
                     {% endfor %}
                 </div>
             </div>

@@ -1,81 +1,126 @@
-*{
-	background-color: #181818;
-	color:#F0EBEA;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-.hero, .display {
-	text-align: center;
-}
-
-.hero {
-	margin-top: 80px;	
-}
-
-h1 {
-	font-size: 50px;
-}
-
-p {
-	font-size: 30px;
-}
-
-a {
+:root {
+	--main-bg: #181818;
+	--main-color: #F0EBEA;
+	--main-ff: Arial, Helvetica, sans-serif;
+	
+	--hero-mt: 80px;
+	
+	--h1-fs: 50px;
+	--p-fs: 30px;
+	
+	--form-fs: 25px;
+	--button-fs: 25px;
+	
+	--display-p: 20px; 
+	--display-h3-fs: 20px;
+	
+	--movie-fs: 35px;
+	--movie-color: chocolate;
+	
+	--li-fs: 20px;
+  }
+  
+  /* Global styles */
+  * {
+	background-color: var(--main-bg);
+	color: var(--main-color);
+	font-family: var(--main-ff);  
+  }
+  
+  /* Layout */
+  .hero, 
+  .display {
+	text-align: center; 
+  }
+  
+  .hero {
+	margin-top: var(--hero-mt);  
+  }
+  
+  /* Typography */
+  h1 {
+	font-size: var(--h1-fs);
+  }
+  
+  p {
+	font-size: var(--p-fs);
+  }
+		
+  a {
 	text-decoration: none;
-}
-
-
-form {
+  }
+  
+  /* Form */  
+  form {
 	text-align: center;
-}
-
-select {
-	font-size: 25px;
+  }
+  
+  select {
+	font-size: var(--form-fs);
 	text-align: center;
 	margin: 40px;
-}
-
-button {
-	font-size: 25px;
-}
-
-.display {
-	margin:20px;
-	padding: 30px;
-}
-
-.display h3{
-	font-size: 20px;
-}
-span {
-	font-size: 35px;
-	color:chocolate;
-}
-
-ul {
+  }
+  
+  button {
+	font-size: var(--button-fs);
+  }
+  
+  /* Display */
+  .display {
+	margin: 10px;
+	padding: var(--display-p); 
+  }
+  
+  .display h3 {
+	font-size: var(--display-h3-fs);
+  } 
+  
+  /* Movie */
+  .movie {
+	font-size: var(--movie-fs);
+	color: var(--movie-color);
+  }
+  
+  /* List */
+  ul {
 	list-style-type: none;
 	text-align: center;
-	transform: translate(-15px);
-}
-
-li {
-	font-size: 20px;
-}
-.grid-container {
-	display: flex;
-	justify-content: center;
+	transform: translate(-15px); 
+  }
+  
+  li {
+	font-size: var(--li-fs);
+  }
+  
+  /* Grid */
+  .grid-container {
+	display: grid;
+	justify-content: center;  
   }
   
   .grid {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(150px, 1fr));
+	grid-template-columns: repeat(3, minmax(150px, 1fr));
 	grid-gap: 20px;
 	justify-items: center;
   }
   
   .grid-item {
-	 
+	display: flex;
 	padding: 10px;
-	border-radius: 5px;
-	box-shadow: 2px 2px 4px rgba(0,0,0,0.1); 
+	border-radius: 5px; 
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+	flex-direction: column; 
+  }
+  
+  /* Image */
+  img {
+	width: 300px;
+	height: 400px;
+	padding: 20px;
+  }
+  
+  /* Recommend */
+  .recommend {
+	font-size: 20px;
   }
