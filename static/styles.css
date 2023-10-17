@@ -1,126 +1,169 @@
 :root {
-	--main-bg: #181818;
+	--main-bg: #181818; 
 	--main-color: #F0EBEA;
 	--main-ff: Arial, Helvetica, sans-serif;
-	
-	--hero-mt: 80px;
-	
+
+	--hero-mt: 50px;
+
 	--h1-fs: 50px;
 	--p-fs: 30px;
-	
+
 	--form-fs: 25px;
 	--button-fs: 25px;
-	
+
 	--display-p: 20px; 
 	--display-h3-fs: 20px;
-	
+
 	--movie-fs: 35px;
 	--movie-color: chocolate;
-	
+
 	--li-fs: 20px;
-  }
-  
-  /* Global styles */
-  * {
-	background-color: var(--main-bg);
+}
+
+/* Global Styles */
+
+body {
+	background: var(--main-bg);
+	margin: var(--hero-mt);  
 	color: var(--main-color);
-	font-family: var(--main-ff);  
-  }
-  
-  /* Layout */
-  .hero, 
-  .display {
-	text-align: center; 
-  }
-  
-  .hero {
-	margin-top: var(--hero-mt);  
-  }
-  
-  /* Typography */
-  h1 {
-	font-size: var(--h1-fs);
-  }
-  
-  p {
-	font-size: var(--p-fs);
-  }
-		
-  a {
-	text-decoration: none;
-  }
-  
-  /* Form */  
-  form {
+	font-family: var(--main-ff);
+	font-weight: 700;
+	
+}
+
+.all{
+	background-image: url("background.png"); 
+
+	background-repeat: no-repeat;
+	background-size:cover;
+	
+}
+
+
+
+/* Layout */
+
+.hero,
+.display {
 	text-align: center;
-  }
-  
-  select {
+}
+
+/* Typography */
+
+.hero{
+	margin-top: var(--hero-mt);
+	padding:10px
+}
+
+h1 {
+	font-size: var(--h1-fs);  
+	
+}
+
+p {
+	font-size: var(--p-fs);
+}
+	
+a {
+	text-decoration: none;
+	color:var(--main-color)
+}
+
+/* Form */
+
+form {
+	text-align: center; 
+	background: transparent;
+}
+
+select {
 	font-size: var(--form-fs);
+	color: var(--main-color);
 	text-align: center;
 	margin: 40px;
-  }
+	background: transparent;
+}
+
+select:focus option,
+select:active option {
+  background-color: var(--main-bg);
   
-  button {
+}
+
+select option {
+	color:crimson;
+}
+
+button {
 	font-size: var(--button-fs);
-  }
-  
-  /* Display */
-  .display {
+	color: var(--main-color);
+	background-color: transparent;  
+}
+
+/* Display */
+
+.display {
 	margin: 10px;
-	padding: var(--display-p); 
-  }
-  
-  .display h3 {
+	padding: var(--display-p);
+}
+
+.display h3 {
 	font-size: var(--display-h3-fs);
-  } 
-  
-  /* Movie */
-  .movie {
+}
+
+/* Movie */
+
+.movie {
 	font-size: var(--movie-fs);
-	color: var(--movie-color);
-  }
-  
-  /* List */
-  ul {
+	color: var(--movie-color); 
+}
+
+/* List */
+
+ul {
 	list-style-type: none;
 	text-align: center;
-	transform: translate(-15px); 
-  }
-  
-  li {
+	transform: translate(-15px);
+}
+
+li {
 	font-size: var(--li-fs);
-  }
-  
-  /* Grid */
-  .grid-container {
+}
+
+/* Grid */ 
+
+.grid-container {
 	display: grid;
-	justify-content: center;  
-  }
-  
-  .grid {
-	display: grid;
+	justify-content: center;   
+}
+
+.grid {
+	display: grid;  
 	grid-template-columns: repeat(3, minmax(150px, 1fr));
 	grid-gap: 20px;
 	justify-items: center;
-  }
-  
-  .grid-item {
+	align-items: center; 
+}
+
+.grid-item {
 	display: flex;
 	padding: 10px;
-	border-radius: 5px; 
+	border-radius: 5px;
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-	flex-direction: column; 
-  }
-  
-  /* Image */
-  img {
+	flex-direction: column;
+}
+
+/* Image */
+
+img {
 	width: 300px;
 	height: 400px;
 	padding: 20px;
-  }
-  
-  /* Recommend */
-  .recommend {
+}
+
+/* Recommend */
+
+.recommend {
 	font-size: 20px;
-  }
+	font-weight: 600;
+}
